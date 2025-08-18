@@ -4,7 +4,7 @@ import historyIcon from "/assets/icons/history.png";
 // import menuIcon from "/assets/icons/menu.png";
 import WelcomePage from "../components/WelcomePage";
 import CompanyStats from "../components/CompanyStats";
-import FoodItems from "../components/FoodItems";
+import OurServices from "../components/OurServices";
 const Homepage = () => {
   return (
     <section className="homepage">
@@ -22,7 +22,7 @@ const Homepage = () => {
       </div>
       <WelcomePage />
       <CompanyStats />
-      <FoodItems />
+      <OurServices />
     </section>
   );
 };
