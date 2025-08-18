@@ -16,17 +16,14 @@
   --color-bg-light: #f8f8f8; /* light background for content */
   --color-bg-card: #2a2a2a; /* cards, menus, highlights */
 
-  /* ✍️ Text Colors */
   --color-text-primary: #ffffff; /* main text */
   --color-text-secondary: #e5e5e5; /* muted text */
   --color-text-dark: #0d0d0d; /* text on light bg */
 
-  /* 🔥 Accent Colors (Food Vibe) */
   --color-accent-primary: #ff9500; /* orange CTA/buttons */
   --color-accent-secondary: #e63946; /* tomato red - extra highlights */
   --color-accent-gold: #ffd60a; /* golden yellow, food highlight */
 
-  /* 🟢 Status Colors (optional, if needed later) */
   --color-success: #4caf50; /* green */
   --color-warning: #ffc107; /* amber */
   --color-error: #ff4c4c; /* bright red */
