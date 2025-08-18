@@ -1,3 +1,5 @@
+import "./CompanyStats.css";
+
 const CompanyStats = () => {
   const stats = [
     { number: "300+", label: "Years of Experience" },

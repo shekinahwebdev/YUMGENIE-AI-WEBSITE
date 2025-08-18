@@ -5,6 +5,7 @@ import historyIcon from "/assets/icons/history.png";
 import WelcomePage from "../components/WelcomePage";
 import CompanyStats from "../components/CompanyStats";
 import OurServices from "../components/OurServices";
+import OurHistory from "../components/OurHistory";
 const Homepage = () => {
   return (
     <section className="homepage">
@@ -22,6 +23,7 @@ const Homepage = () => {
       </div>
       <WelcomePage />
       <CompanyStats />
+      <OurHistory />
       <OurServices />
     </section>
   );

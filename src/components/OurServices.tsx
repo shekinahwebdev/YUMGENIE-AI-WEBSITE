@@ -1,3 +1,5 @@
+import "./OurServices.css";
+
 const OurServices = () => {
   const serviceItems = [
     {
