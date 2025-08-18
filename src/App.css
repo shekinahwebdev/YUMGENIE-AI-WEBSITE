@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kumbh+Sans:wght@100..900&family=Lexend+Deca:wght@100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Overpass:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&family=Roboto+Slab:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Tagesschrift&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Young+Serif&display=swap");
+
+:root {
+  --Red: #ff3b30;
+  --White: #ffffff;
+  --Black: #000000;
+  --Orange: #ff9500;
+  --Background-Header: #0d1117;
+  --Logo: #6c63ff;
+}
+
+:root {
+  /* 🌑 Dark Theme Backgrounds */
+  --color-bg-dark: #0d0d0d; /* deep charcoal */
+  --color-bg-darker: #1a1a1a; /* section contrast */
+  --color-bg-light: #f8f8f8; /* light background for content */
+  --color-bg-card: #2a2a2a; /* cards, menus, highlights */
+
+  /* ✍️ Text Colors */
+  --color-text-primary: #ffffff; /* main text */
+  --color-text-secondary: #e5e5e5; /* muted text */
+  --color-text-dark: #0d0d0d; /* text on light bg */
+
+  /* 🔥 Accent Colors (Food Vibe) */
+  --color-accent-primary: #ff9500; /* orange CTA/buttons */
+  --color-accent-secondary: #e63946; /* tomato red - extra highlights */
+  --color-accent-gold: #ffd60a; /* golden yellow, food highlight */
+
+  /* 🟢 Status Colors (optional, if needed later) */
+  --color-success: #4caf50; /* green */
+  --color-warning: #ffc107; /* amber */
+  --color-error: #ff4c4c; /* bright red */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.homepage_header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: var(--Background-Header);
+}
+
+.homepage_header .header_title {
+  font-size: 2rem;
+  color: var(--color-accent-primary);
+}
+
+.main-nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+  padding: 0;
+}
+
+.nav-menu a {
+  font-size: 1.4rem;
+  overflow: hidden;
+  position: relative !important;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #e5e5e5;
+}
+
+.nav-menu a::before,
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.nav-menu a::before {
+  background-color: var(--color-warning);
+  height: 2px;
+  bottom: 0;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.nav-menu a::after {
+  content: attr(data-text);
+  height: 100%;
+  top: 0;
+  transform-origin: 100% 50%;
+  transform: translate3d(200%, 0, 0);
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+  color: var(--color-accent-primary);
+  position: absolute;
+}
+
+.nav-menu a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
+}
+
+.nav-menu a:hover::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.nav-menu a span {
+  display: inline-block;
+  transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.nav-menu a:hover span {
+  transform: translate3d(-200%, 0, 0);
+}
+
+.header_right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  /* border: 2px solid red; */
+  background-color: white;
+  padding: 1.4rem 0rem;
+  border-radius: 35px;
+  width: 150px;
+  height: 50px;
+}
+
+.header_right .search_button,
+.header_right .history_button {
+  border: none;
+  background-color: transparent;
+  padding: 0.5rem;
+  width: 45px;
+  height: 45px;
+  margin: 0.3rem 0.2rem;
+  background-color: var(--color-accent-primary);
+  border-radius: 35px;
+  cursor: pointer;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
