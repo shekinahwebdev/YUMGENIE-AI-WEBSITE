@@ -1,8 +1,8 @@
-import React from "react";
 import NavLinks from "../components/NavLinks";
 import searchIcon from "/assets/icons/search.png";
 import historyIcon from "/assets/icons/history.png";
-import menuIcon from "/assets/icons/menu.png";
+// import menuIcon from "/assets/icons/menu.png";
+import WelcomePage from "../components/WelcomePage";
 const Homepage = () => {
   return (
     <section className="homepage">
@@ -18,6 +18,7 @@ const Homepage = () => {
           </button>
         </div>
       </div>
+      <WelcomePage />
     </section>
   );
 };
