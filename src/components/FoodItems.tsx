@@ -14,15 +14,15 @@ const FoodItems = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
 
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? foodItems.length - 3 : prev - 1));
-  };
+  // const prevSlide = () => {
+  //   setCurrentIndex((prev) => (prev === 0 ? foodItems.length - 3 : prev - 1));
+  // };
 
-  const nextSlide = () => {
-    setCurrentIndex((prev) =>
-      prev === foodItems.length - 1 ? foodItems.length - 2 : prev + 1
-    );
-  };
+  // const nextSlide = () => {
+  //   setCurrentIndex((prev) =>
+  //     prev === foodItems.length - 1 ? foodItems.length - 2 : prev + 1
+  //   );
+  // };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -58,14 +58,14 @@ const FoodItems = () => {
         </div>
       </div>
 
-      <div className="foodItems-arrows">
+      {/* <div className="foodItems-arrows">
         <button onClick={prevSlide} className="foodItems-arrow left-arrow">
           <img src={leftArrow} alt="Left Arrow" />
         </button>
         <button onClick={nextSlide} className="foodItems-arrow right-arrow">
           <img src={rightArrow} alt="Right Arrow" />
         </button>
-      </div>
+      </div> */}
     </section>
   );
 };
