@@ -2,10 +2,10 @@ import "./CompanyStats.css";
 
 const CompanyStats = () => {
   const stats = [
-    { number: "300+", label: "Years of Experience" },
-    { number: "500+", label: "Experts of Cook" },
-    { number: "500+", label: "Branches in the World" },
-    { number: "500+", label: "Project Done" },
+    { number: "400+", label: "Years of Experience" },
+    { number: "230+", label: "Experts of Cook" },
+    { number: "300+", label: "Branches in the World" },
+    { number: "100+", label: "Sponsorship" },
   ];
 
   return (

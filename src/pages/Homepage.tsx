@@ -7,6 +7,7 @@ import CompanyStats from "../components/CompanyStats";
 import OurServices from "../components/OurServices";
 import OurHistory from "../components/OurHistory";
 import FoodItems from "../components/FoodItems";
+import Footer from "../components/Footer";
 const Homepage = () => {
   return (
     <section className="homepage">
@@ -27,6 +28,7 @@ const Homepage = () => {
       <OurHistory />
       <OurServices />
       <FoodItems />
+      <Footer />
     </section>
   );
 };

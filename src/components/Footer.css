@@ -1,0 +1,77 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-top-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5rem 3rem;
+  background-color: var(--Background-Header);
+}
+
+.footer-title {
+  font-size: 2.5rem;
+  font-family: "Edu NSW ACT Cursive", cursive;
+  color: white;
+}
+
+.footer-links,
+.footer-links-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 3rem;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.footer-link {
+  list-style-type: none;
+}
+
+.footer-link a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-link a:hover {
+  color: var(--color-warning);
+}
+
+.footer-social-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 3rem;
+  background-color: white;
+}
+
+.footer-copyright {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+
+.policy {
+  color: var(--color-warning);
+  text-decoration: underline;
+}
+
+.footer-socials {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}

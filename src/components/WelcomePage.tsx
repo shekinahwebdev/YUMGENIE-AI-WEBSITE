@@ -42,7 +42,7 @@ const WelcomePage = () => {
       </div>
 
       <button className="welcome-button" onClick={() => navigate("/order")}>
-        <span>Order Now</span>
+        Order Now
       </button>
     </section>
   );
