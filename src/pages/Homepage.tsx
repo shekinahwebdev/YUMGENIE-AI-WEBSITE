@@ -3,6 +3,10 @@ import searchIcon from "/assets/icons/search.png";
 import historyIcon from "/assets/icons/history.png";
 // import menuIcon from "/assets/icons/menu.png";
 import WelcomePage from "../components/WelcomePage";
+import CompanyStats from "../components/CompanyStats";
+import OurServices from "../components/OurServices";
+import OurHistory from "../components/OurHistory";
+import FoodItems from "../components/FoodItems";
 const Homepage = () => {
   return (
     <section className="homepage">
@@ -19,6 +23,10 @@ const Homepage = () => {
         </div>
       </div>
       <WelcomePage />
+      <CompanyStats />
+      <OurHistory />
+      <OurServices />
+      <FoodItems />
     </section>
   );
 };
