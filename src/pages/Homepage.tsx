@@ -8,9 +8,11 @@ import OurServices from "../components/OurServices";
 import OurHistory from "../components/OurHistory";
 import FoodItems from "../components/FoodItems";
 import Footer from "../components/Footer";
+import ChatbotPage from "./ChatbotPage";
 const Homepage = () => {
   return (
     <section className="homepage">
+      <ChatbotPage />
       <div className="homepage_header">
         <h1 className="header_title">YumGenie</h1>
         <NavLinks />
