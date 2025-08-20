@@ -1,12 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App.tsx";
+import { ChatbotProvider } from "./contexts/ChatbotContext.tsx";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router.tsx";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ChatbotProvider>
+      <RouterProvider router={router} />
+    </ChatbotProvider>
   </StrictMode>
 );

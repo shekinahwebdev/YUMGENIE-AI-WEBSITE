@@ -5,6 +5,7 @@ import chatbot from "/assets/icons/chatbot.png";
 import "../components/ChatbotPage.css";
 import { useEffect, useRef, useState } from "react";
 import { companyInfo } from "../data/companyInfo";
+import { useChatbot } from "../contexts/ChatbotContext";
 
 interface ChatMessage {
   hideInfoChat: boolean;
@@ -21,12 +22,9 @@ const ChatbotPage = () => {
       content: companyInfo,
     },
   ]);
-  const [showChat, setShowChat] = useState<boolean>(true);
   const chatRef = useRef<HTMLDivElement>(null);
 
-  const handleShowChat = () => {
-    setShowChat((prev) => !prev);
-  };
+  const { isOpen, toggleChatbot } = useChatbot();
 
   const generateBotResponse = async (history: any[]) => {
     const upadateChatHistory = (botReply: string, isError: boolean = false) => {
@@ -83,8 +81,8 @@ const ChatbotPage = () => {
 
   return (
     <>
-      <main className={`main ${showChat ? "show-chatbot wrapper" : ""}`}>
-        <button className="chatbot_toggle-button" onClick={handleShowChat}>
+      <main className={`main ${isOpen ? "show-chatbot wrapper" : ""}`}>
+        <button className="chatbot_toggle-button" onClick={toggleChatbot}>
           <img
             src="/assets/icons/close.png"
             alt="Close Chatbot"
@@ -97,7 +95,7 @@ const ChatbotPage = () => {
           />
         </button>
         <div className="chatbot_main">
-          <ChatHeader handleShowChat={handleShowChat} />
+          <ChatHeader toggleChatbot={toggleChatbot} />
           <section className="chatbot_body" ref={chatRef}>
             <div className="chatbot_message">
               <div className="chatbot_icon-container">
