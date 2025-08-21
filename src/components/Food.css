@@ -17,6 +17,10 @@
   position: relative;
 }
 
+.foodImage.selected {
+  border: 1px solid red;
+}
+
 .btn {
   display: flex;
   flex-direction: row;
