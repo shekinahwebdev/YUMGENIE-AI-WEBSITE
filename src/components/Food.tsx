@@ -53,9 +53,9 @@ const Food = () => {
             </button>
           </div>
           <div className="item_class">
-            <span className="food-item__category">Desserts</span>
-            <span className="food-item__name">Ice cream</span>
-            <span className="fodd-item__price">$9.99</span>
+            <span className="food-item__category">{food.category}</span>
+            <span className="food-item__name">{food.title}</span>
+            <span className="fodd-item__price">${food.price}</span>
           </div>
         </div>
       ))}
