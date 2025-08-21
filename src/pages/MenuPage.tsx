@@ -1,7 +1,16 @@
+import { useState } from "react";
 import Food from "../components/Food";
 import "../components/MenuPage.css";
 import menuIcon from "/assets/icons/fast-food.png";
+import { foodLists } from "../data/foodIists";
 const MenuPage = () => {
+  const [activeCatergory, setActiveCategory] = useState("All");
+
+  const filteredFoods =
+    activeCatergory === "All"
+      ? foodLists
+      : foodLists.filter((food) => food.category === activeCatergory);
+
   return (
     <main className="menu-page">
       <section className="menu-header">
@@ -10,32 +19,29 @@ const MenuPage = () => {
           <img src={menuIcon} alt="Menu Icon" className="menu-icon" />
         </div>
         <div className="menu-buttons">
-          <button
-            className="active-button menu-button"
-            aria-label="Active Menu Button"
-          >
-            <span>All</span>
-          </button>
-          <button className="menu-button" aria-label="Active Menu Button">
-            <span>Desserts</span>
-          </button>
-          <button className="menu-button" aria-label="Active Menu Button">
-            <span>Drinks</span>
-          </button>
-          <button className="menu-button" aria-label="Active Menu Button">
-            <span>Fast-Food</span>
-          </button>
-          <button className="menu-button" aria-label="Active Menu Button">
-            <span>Main-Dish</span>
-          </button>
-          <button className="menu-button" aria-label="Active Menu Button">
-            <span>Snacks</span>
-          </button>
+          {[
+            "All",
+            "Desserts",
+            "Drinks",
+            "Fast-Food",
+            "Main-Dish",
+            "Snacks",
+          ].map((category) => (
+            <button
+              className={`button ${
+                activeCatergory === category ? "active-button" : ""
+              }`}
+              onClick={() => setActiveCategory(category)}
+              aria-label="Active Menu Button"
+            >
+              <span>{category}</span>
+            </button>
+          ))}
         </div>
       </section>
 
       <aside className="menu-aside">
-        <Food />
+        <Food food={filteredFoods} />
       </aside>
     </main>
   );

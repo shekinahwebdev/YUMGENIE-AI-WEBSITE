@@ -1,5 +1,4 @@
 .food-section {
-  border: 2px solid yellow;
   padding: 1rem 1rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));

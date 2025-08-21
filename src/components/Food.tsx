@@ -1,13 +1,21 @@
 import addToCart from "/assets/icons/icon-add-cart.svg";
 import "./Food.css";
-import { foodLists } from "../data/foodIists";
 
-const Food = () => {
+interface FoodProps {
+  food: {
+    src: string;
+    category: string;
+    title: string;
+    price: number;
+  }[];
+}
+
+const Food: React.FC<FoodProps> = ({ food }) => {
   return (
     <section className="food-section">
-      {foodLists.map((food, index) => (
+      {food.map((list, index) => (
         <div className="foodName" key={index}>
-          <img src={food.src} alt="fruts" className="foodImage" />
+          <img src={list.src} alt="fruts" className="foodImage" />
           <div className="food-item-add">
             <button className="add-section btn">
               <img
@@ -53,9 +61,9 @@ const Food = () => {
             </button>
           </div>
           <div className="item_class">
-            <span className="food-item__category">{food.category}</span>
-            <span className="food-item__name">{food.title}</span>
-            <span className="fodd-item__price">${food.price}</span>
+            <span className="food-item__category">{list.category}</span>
+            <span className="food-item__name">{list.title}</span>
+            <span className="fodd-item__price">${list.price}</span>
           </div>
         </div>
       ))}
