@@ -1,0 +1,109 @@
+.food-section {
+  border: 2px solid yellow;
+  padding: 1rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.foodImage {
+  border-radius: 10px;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.foodName {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  border: 1px solid var(--color-accent-secondary);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 66%;
+  z-index: 999;
+}
+
+.add_cart {
+  font-size: 1rem;
+}
+
+.quantity-controls {
+  display: flex;
+  padding: 0;
+  /* gap: 2.5rem; */
+  padding: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-accent-primary);
+  border-radius: 10px;
+  width: 150px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 66%;
+  left: 50%;
+}
+
+.food-item__button {
+  width: 25px;
+  height: 25px;
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: var(--color-accent-primary);
+}
+
+.quantity-controls p {
+  font-size: 1.6rem;
+  margin: 0;
+  color: var(--Rose-100);
+}
+
+.increment {
+  margin-left: 1rem;
+}
+
+.decrement {
+  margin-right: 1rem;
+}
+
+.item_class {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2.5rem;
+}
+
+.food-item__category {
+  color: var(--Rose-400);
+  font-size: 1.6rem;
+}
+
+.food-item__name {
+  color: var(--Rose-900);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.fodd-item__price {
+  color: var(--Red);
+  font-size: 1.2rem;
+  font-weight: 600;
+}

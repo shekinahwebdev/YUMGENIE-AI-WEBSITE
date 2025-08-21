@@ -1,3 +1,4 @@
+import Food from "../components/Food";
 import "../components/MenuPage.css";
 import menuIcon from "/assets/icons/fast-food.png";
 const MenuPage = () => {
@@ -32,6 +33,10 @@ const MenuPage = () => {
           </button>
         </div>
       </section>
+
+      <aside className="menu-aside">
+        <Food />
+      </aside>
     </main>
   );
 };
