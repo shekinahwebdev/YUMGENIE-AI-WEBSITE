@@ -1,5 +1,6 @@
 import addToCart from "/assets/icons/icon-add-cart.svg";
 import "./Food.css";
+import { useState } from "react";
 
 type FoodType = {
   src: string;
@@ -12,21 +13,46 @@ interface FoodProps {
   food: FoodType;
   isSelected?: boolean;
   onToggle: () => void;
-  key: string;
+  foodId: string;
 }
 
-const Food: React.FC<FoodProps> = ({ food, onToggle, isSelected, key }) => {
+const Food: React.FC<FoodProps> = ({ food, onToggle, isSelected, foodId }) => {
+  const [count, setCount] = useState(0);
+
+  const handleIncrement = () => {
+    setCount((prev) => {
+      const newCount = prev + 1;
+      if (newCount === 0) {
+        onToggle();
+      }
+      return newCount;
+    });
+  };
+
+  const handleDecrement = () => {
+    setCount((prev) => {
+      if (prev > 1) {
+        return prev - 1;
+      }
+      if (prev === 0) {
+        onToggle();
+        return 0;
+      }
+      return 0;
+    });
+  };
+
   return (
     <section className="food-section">
       {/* {food.map((list, index) => ( */}
-      <div className="foodName" key={key}>
+      <div className="foodName" key={foodId}>
         <img
           src={food.src}
           alt="fruts"
           className={`foodImage ${isSelected ? "selected" : ""}`}
         />
         <div className="food-item-add">
-          {!isSelected ? (
+          {!isSelected && count === 0 ? (
             <button className="add-section btn" onClick={onToggle}>
               <img
                 src={addToCart}
@@ -39,7 +65,7 @@ const Food: React.FC<FoodProps> = ({ food, onToggle, isSelected, key }) => {
             <div className="quantity-controls">
               <button
                 className="food-item__button decrement"
-                // onClick={handleDecrement}
+                onClick={handleDecrement}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -51,10 +77,10 @@ const Food: React.FC<FoodProps> = ({ food, onToggle, isSelected, key }) => {
                   <path fill="currentColor" d="M0 .375h10v1.25H0V.375Z" />
                 </svg>
               </button>
-              <p>0</p>
+              <p>{count}</p>
               <button
                 className="food-item__button increment"
-                // onClick={handleIncrement}
+                onClick={handleIncrement}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

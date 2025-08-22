@@ -64,12 +64,13 @@ const MenuPage = () => {
       </section>
 
       <aside className="menu-aside">
-        {filteredFoods.map((foodLists) => {
+        {filteredFoods.map((foodLists, index) => {
           const isSelected = selectedFood.some((f) => f.id === foodLists.id);
           return (
             <Food
               isSelected={isSelected}
-              key={foodLists.id}
+              key={index}
+              foodId={foodLists.id}
               food={foodLists}
               onToggle={() => toggleFoodSelection(foodLists)}
             />
