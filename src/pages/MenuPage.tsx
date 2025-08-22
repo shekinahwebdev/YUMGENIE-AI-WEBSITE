@@ -11,6 +11,29 @@ const MenuPage = () => {
       ? foodLists
       : foodLists.filter((food) => food.category === activeCatergory);
 
+  interface FoodType {
+    id: string;
+    src: string;
+    category: string;
+    title: string;
+    price: number;
+  }
+  [];
+
+  const [selectedFood, setSelectedFood] = useState<FoodType[]>([]);
+
+  const toggleFoodSelection = (food: FoodType) => {
+    setSelectedFood((prev) => {
+      const existedFood = selectedFood.some((item) => item.id === food.id);
+
+      if (existedFood) {
+        return prev.filter((item) => item.id !== food.id);
+      } else {
+        return [...prev, food];
+      }
+    });
+  };
+
   return (
     <main className="menu-page">
       <section className="menu-header">
@@ -41,7 +64,17 @@ const MenuPage = () => {
       </section>
 
       <aside className="menu-aside">
-        <Food food={filteredFoods} />
+        {filteredFoods.map((foodLists) => {
+          const isSelected = selectedFood.some((f) => f.id === foodLists.id);
+          return (
+            <Food
+              isSelected={isSelected}
+              key={foodLists.id}
+              food={foodLists}
+              onToggle={() => toggleFoodSelection(foodLists)}
+            />
+          );
+        })}
       </aside>
     </main>
   );
