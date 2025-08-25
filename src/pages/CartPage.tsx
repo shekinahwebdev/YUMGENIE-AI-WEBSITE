@@ -1,12 +1,24 @@
 import "../components/CartPage.css";
+import SelectedPage from "./SelectedPage";
+import menuIcon from "/assets/icons/fast-food.png";
 
 const CartPage = () => {
   return (
     <main className="cart-page">
       <section className="cart-header">
-        <h1 className="cart-title">Your Cart</h1>
-        <p className="cart-subtitle">Review your selected items</p>
+        <div className="cart-left-side">
+          <h1 className="cart-title">My Cart</h1>
+          <img src={menuIcon} alt="Menu Icon" className="menu-icon" />
+        </div>
+
+        <div className="clear-cart">
+          <button className="button clear-cart-button" aria-label="Clear Cart">
+            <span>Clear Cart</span>
+          </button>
+        </div>
       </section>
+
+      <SelectedPage />
     </main>
   );
 };
