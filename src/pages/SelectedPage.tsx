@@ -19,7 +19,7 @@ const SelectedPage = () => {
         </div>
 
         <button className="checkout-button" aria-label="Checkout Button">
-          <span>Checkout</span>
+          <span>Add to cart</span>
         </button>
       </section>
     </main>
