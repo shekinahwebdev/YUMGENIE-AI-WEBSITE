@@ -3,6 +3,7 @@ import Homepage from "./pages/Homepage";
 import MenuPage from "./pages/MenuPage";
 import RootLayout from "./RootLayout";
 import CartPage from "./pages/CartPage";
+import OrderPage from "./pages/OrderPage";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ export const router = createBrowserRouter([
       { index: true, element: <Homepage /> },
       { path: "/menu", element: <MenuPage /> },
       { path: "/cart", element: <CartPage /> },
+      { path: "/order", element: <OrderPage /> },
     ],
   },
 ]);
