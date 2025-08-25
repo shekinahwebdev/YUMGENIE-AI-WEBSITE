@@ -26,7 +26,7 @@
   gap: 2rem;
 }
 
-.selected-page {
+.empty-page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,7 +39,7 @@
   height: 250px;
 }
 
-.selected-header {
+.empty-header {
   border: 2px solid #e5e5e5;
   display: flex;
   flex-direction: column;
@@ -51,11 +51,11 @@
   border-radius: 20px;
 }
 
-.selected-text {
+.empty-text {
   font-size: 1.8rem;
 }
 
-.selected-page-footer {
+.empty-page-footer {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -73,7 +73,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #0d1117;
+  border-bottom: 0.5px solid #0d1117;
 }
 
 .subtotal-text,
@@ -108,4 +108,79 @@
     var(--color-accent-primary) 0%,
     var(--color-accent-secondary) 100%
   );
+}
+
+.selected-page {
+  padding: 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.food-selected {
+  border: 2px solid #e5e5e5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 20px;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  width: 100%;
+  min-width: 350px;
+}
+
+.selected-food-info {
+  display: flex;
+  flex-direction: row;
+  align-items: self-start;
+  gap: 1rem;
+}
+
+.food-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* color: white; */
+}
+
+.food-price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #0d0d0d;
+  color: white;
+  padding: 0.2rem 1rem;
+  border-radius: 10px;
+}
+.food-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.selected-food-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 20px;
+}
+
+.remove-icon {
+  width: 20px;
+  height: 20px;
+}
+.remove-item-button {
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: var(--color-accent-primary);
+}
+
+.remove-item-button:hover {
+  background-color: #f8f8f8;
+  color: black;
 }

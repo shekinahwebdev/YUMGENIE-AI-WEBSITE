@@ -1,13 +1,48 @@
-import emptyIcon from "/assets/icons/empty-box.png";
+import removeIcon from "/assets/icons/close.png";
+
 const SelectedPage = () => {
   return (
     <main className="selected-page">
-      <div className="selected-header">
-        <img src={emptyIcon} alt="Empty Icon" className="empty-icon" />
-        <p className="selected-text">Empty cart</p>
-      </div>
+      <section className="food-selected">
+        <div className="selected-food-info">
+          <img
+            src="/assets/Drinks/coffee.jpg"
+            alt="coffee"
+            className="selected-food-image"
+          />
 
-      <section className="selected-page-footer">
+          <div className="food-side">
+            <p className="food-name">Coffee</p>
+            <p className="food-price">$100.00</p>
+          </div>
+        </div>
+
+        <button className="remove-item-button">
+          <span>Remove</span>
+          <img src={removeIcon} alt="remove icon" className="remove-icon" />
+        </button>
+      </section>
+      <section className="food-selected">
+        <div className="selected-food-info">
+          <img
+            src="/assets/Drinks/coffee.jpg"
+            alt="coffee"
+            className="selected-food-image"
+          />
+
+          <div className="food-side">
+            <p className="food-name">Coffee</p>
+            <p className="food-price">$100.00</p>
+          </div>
+        </div>
+
+        <button className="remove-item-button">
+          <span>Remove</span>
+          <img src={removeIcon} alt="remove icon" className="remove-icon" />
+        </button>
+      </section>
+
+      <section className="empty-page-footer">
         <div className="subtotal">
           <p className="subtotal-text">Subtotal</p>
           <p className="subtotal-amount">$0.00</p>
@@ -19,7 +54,7 @@ const SelectedPage = () => {
         </div>
 
         <button className="checkout-button" aria-label="Checkout Button">
-          <span>Add to cart</span>
+          <span>Checkout</span>
         </button>
       </section>
     </main>

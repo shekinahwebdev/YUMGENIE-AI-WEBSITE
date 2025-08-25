@@ -1,5 +1,5 @@
-
 import "../components/CartPage.css";
+import EmptyPage from "./EmptyPage";
 import SelectedPage from "./SelectedPage";
 import menuIcon from "/assets/icons/fast-food.png";
 
@@ -18,7 +18,7 @@ const CartPage = () => {
           </button>
         </div>
       </section>
-
+      {/* <EmptyPage /> */}
       <SelectedPage />
     </main>
   );
