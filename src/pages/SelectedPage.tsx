@@ -11,10 +11,16 @@ const SelectedPage = () => {
             className="selected-food-image"
           />
 
-          <div className="food-side">
-            <p className="food-name">Coffee</p>
-            <p className="food-price">$100.00</p>
-          </div>
+          <section className="food-top">
+            <div className="food-side">
+              <p className="food-name">Coffee</p>
+              <p className="food-price">$100.00</p>
+            </div>
+            <div className="food-total">
+              <p className="food-count">x1</p>
+              <p className="food-count-price">$100.00</p>
+            </div>
+          </section>
         </div>
 
         <button className="remove-item-button">
@@ -30,10 +36,16 @@ const SelectedPage = () => {
             className="selected-food-image"
           />
 
-          <div className="food-side">
-            <p className="food-name">Coffee</p>
-            <p className="food-price">$100.00</p>
-          </div>
+          <section className="food-top">
+            <div className="food-side">
+              <p className="food-name">Coffee</p>
+              <p className="food-price">$100.00</p>
+            </div>
+            <div className="food-total">
+              <p className="food-count">x1</p>
+              <p className="food-count-price">$100.00</p>
+            </div>
+          </section>
         </div>
 
         <button className="remove-item-button">

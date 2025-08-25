@@ -147,6 +147,10 @@
   /* color: white; */
 }
 
+.food-count {
+  font-size: 1.3rem;
+}
+
 .food-price {
   font-size: 1.2rem;
   font-weight: 600;
@@ -187,4 +191,18 @@
 .remove-item-button:hover {
   background-color: #f8f8f8;
   color: black;
+}
+
+.food-top {
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.food-total {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
