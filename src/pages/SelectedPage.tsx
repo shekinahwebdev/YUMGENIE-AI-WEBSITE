@@ -9,8 +9,14 @@ const SelectedPage = () => {
             src="/assets/Drinks/coffee.jpg"
             alt="coffee"
             className="selected-food-image"
-          />
-
+          <div className="food-side">
+            <p className="food-name">Coffee</p>
+            <p className="food-price">$100.00</p>
+          </div>
+          <div className="food-total">
+            <p className="food-count">x1</p>
+            <p className="food-count-price">$100.00</p>
+          </div>
           <section className="food-top">
             <div className="food-side">
               <p className="food-name">Coffee</p>
@@ -22,7 +28,6 @@ const SelectedPage = () => {
             </div>
           </section>
         </div>
-
         <button className="remove-item-button">
           <span>Remove</span>
           <img src={removeIcon} alt="remove icon" className="remove-icon" />
@@ -35,7 +40,14 @@ const SelectedPage = () => {
             alt="coffee"
             className="selected-food-image"
           />
-
+          <div className="food-side">
+            <p className="food-name">Coffee</p>
+            <p className="food-price">$100.00</p>
+          </div>
+          <div className="food-total">
+            <p className="food-count">x1</p>
+            <p className="food-count-price">$100.00</p>
+          </div
           <section className="food-top">
             <div className="food-side">
               <p className="food-name">Coffee</p>
@@ -47,24 +59,24 @@ const SelectedPage = () => {
             </div>
           </section>
         </div>
-
         <button className="remove-item-button">
           <span>Remove</span>
           <img src={removeIcon} alt="remove icon" className="remove-icon" />
         </button>
       </section>
-
       <section className="empty-page-footer">
         <div className="subtotal">
           <p className="subtotal-text">Subtotal</p>
           <p className="subtotal-amount">$0.00</p>
         </div>
-
         <div className="total">
           <p className="total-text">Total</p>
           <p className="total-amount">$0.00</p>
         </div>
-
+        <div className="food-total">
+          <p className="food-count">x1</p>
+          <p className="food-count-price">$100.00</p>
+        </div>
         <button className="checkout-button" aria-label="Checkout Button">
           <span>Checkout</span>
         </button>
