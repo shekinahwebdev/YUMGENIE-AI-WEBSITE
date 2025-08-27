@@ -10,13 +10,15 @@ const SelectedPage = () => {
             alt="coffee"
             className="selected-food-image"
           />
-
           <div className="food-side">
             <p className="food-name">Coffee</p>
             <p className="food-price">$100.00</p>
           </div>
+          <div className="food-total">
+            <p className="food-count">x1</p>
+            <p className="food-count-price">$100.00</p>
+          </div>
         </div>
-
         <button className="remove-item-button">
           <span>Remove</span>
           <img src={removeIcon} alt="remove icon" className="remove-icon" />
@@ -29,13 +31,15 @@ const SelectedPage = () => {
             alt="coffee"
             className="selected-food-image"
           />
-
           <div className="food-side">
             <p className="food-name">Coffee</p>
             <p className="food-price">$100.00</p>
           </div>
+          <div className="food-total">
+            <p className="food-count">x1</p>
+            <p className="food-count-price">$100.00</p>
+          </div>
         </div>
-
         <button className="remove-item-button">
           <span>Remove</span>
           <img src={removeIcon} alt="remove icon" className="remove-icon" />
@@ -47,12 +51,14 @@ const SelectedPage = () => {
           <p className="subtotal-text">Subtotal</p>
           <p className="subtotal-amount">$0.00</p>
         </div>
-
         <div className="total">
           <p className="total-text">Total</p>
           <p className="total-amount">$0.00</p>
         </div>
-
+        <div className="food-total">
+          <p className="food-count">x1</p>
+          <p className="food-count-price">$100.00</p>
+        </div>
         <button className="checkout-button" aria-label="Checkout Button">
           <span>Checkout</span>
         </button>
