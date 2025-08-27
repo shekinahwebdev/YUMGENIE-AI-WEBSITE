@@ -3,7 +3,8 @@
   min-height: 80vh;
 }
 
-.cart-header {
+.cart-header,
+.order-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -16,10 +17,13 @@
   );
   padding: 1rem 2rem;
 }
-.cart-title {
+
+.cart-title,
+.order-title {
   font-size: 2.5rem;
 }
-.cart-left-side {
+.cart-left-side,
+.order-left-side {
   color: white;
   display: flex;
   align-items: center;
@@ -141,6 +145,10 @@
   font-size: 1.5rem;
   font-weight: bold;
   /* color: white; */
+}
+
+.food-count {
+  font-size: 1.3rem;
 }
 
 .food-price {
