@@ -1,4 +1,5 @@
 import removeIcon from "/assets/icons/close.png";
+import { Link } from "react-router-dom";
 
 const SelectedPage = () => {
   return (
@@ -13,10 +14,10 @@ const SelectedPage = () => {
           <div className="food-side">
             <p className="food-name">Coffee</p>
             <p className="food-price">$100.00</p>
-          </div>
-          <div className="food-total">
-            <p className="food-count">x1</p>
-            <p className="food-count-price">$100.00</p>
+            <div className="food-total">
+              <p className="food-count">x1</p>
+              <p className="food-count-price">$100.00</p>
+            </div>
           </div>
         </div>
         <button className="remove-item-button">
@@ -34,10 +35,10 @@ const SelectedPage = () => {
           <div className="food-side">
             <p className="food-name">Coffee</p>
             <p className="food-price">$100.00</p>
-          </div>
-          <div className="food-total">
-            <p className="food-count">x1</p>
-            <p className="food-count-price">$100.00</p>
+            <div className="food-total">
+              <p className="food-count">x1</p>
+              <p className="food-count-price">$100.00</p>
+            </div>
           </div>
         </div>
         <button className="remove-item-button">
@@ -55,12 +56,12 @@ const SelectedPage = () => {
           <p className="total-text">Total</p>
           <p className="total-amount">$0.00</p>
         </div>
-        <div className="food-total">
+        <div className="food-fin-total">
           <p className="food-count">x1</p>
           <p className="food-count-price">$100.00</p>
         </div>
         <button className="checkout-button" aria-label="Checkout Button">
-          <span>Checkout</span>
+          <Link to="/order">Checkout</Link>
         </button>
       </section>
     </main>
