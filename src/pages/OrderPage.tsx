@@ -6,7 +6,7 @@ const OrderPage = () => {
     <main className="order-page">
       <section className="order-header">
         <div className="order-left-side">
-          <h1 className="order-title">Place Your Order</h1>
+          <h1 className="order-title">You Order</h1>
           <img src={menuIcon} alt="Menu Icon" className="menu-icon" />
         </div>
       </section>
