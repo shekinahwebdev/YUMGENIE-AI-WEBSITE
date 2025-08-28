@@ -12,7 +12,7 @@ const SelectedPage: React.FC<SelectedPageProps> = ({
   handleRemoveFood,
 }) => {
   const subtotal = selectedFood.reduce(
-    (sum, food) => sum + food.price + food.foodCount,
+    (sum, food) => sum + food.price * food.foodCount,
     0
   );
   return (
@@ -57,7 +57,9 @@ const SelectedPage: React.FC<SelectedPageProps> = ({
             <p className="total-amount">${subtotal.toFixed(2)}</p>
           </div>
           <div className="food-fin-total">
-            <p className="food-count">x{selectedFood.length}</p>
+            <p className="food-count">
+              x{selectedFood.reduce((total, f) => total + f.foodCount, 0)}
+            </p>
             <p className="food-count-price">${subtotal.toFixed(2)}</p>
           </div>
           <button className="checkout-button" aria-label="Checkout Button">

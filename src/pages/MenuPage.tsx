@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Food from "../components/Food";
 import "../components/MenuPage.css";
 import menuIcon from "/assets/icons/fast-food.png";
@@ -9,27 +8,55 @@ import { useOutletContext } from "react-router-dom";
 type ContextType = {
   selectedFood: FoodType[];
   setSelectedFood: React.Dispatch<React.SetStateAction<FoodType[]>>;
+  activeCategory: string;
+  setActiveCategory: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const MenuPage = () => {
-  const [activeCatergory, setActiveCategory] = useState("All");
+  const { selectedFood, setSelectedFood, activeCategory, setActiveCategory } =
+    useOutletContext<ContextType>();
+
+  const foodsWithCounts = foodLists.map((food) => {
+    const match = selectedFood.find((f) => f.id === food.id);
+    return match ? { ...food, foodCount: match.foodCount } : food;
+  });
 
   const filteredFoods =
-    activeCatergory === "All"
-      ? foodLists
-      : foodLists.filter((food) => food.category === activeCatergory);
-
-  const { selectedFood, setSelectedFood } = useOutletContext<ContextType>();
+    activeCategory === "All"
+      ? foodsWithCounts
+      : foodsWithCounts.filter((food) => food.category === activeCategory);
 
   const toggleFoodSelection = (food: FoodType) => {
     setSelectedFood((prev) => {
-      const existedFood = selectedFood.some((item) => item.id === food.id);
+      const existedFood = prev.some((item) => item.id === food.id);
       if (existedFood) {
-        return prev.filter((item) => item.id !== food.id);
+        return prev.map((item) =>
+          item.id === food.id
+            ? { ...item, foodCount: item.foodCount + 1 }
+            : item
+        );
       } else {
-        return [...prev, food];
+        return [...prev, { ...food, foodCount: 1 }];
       }
     });
+  };
+
+  const Onincrement = (foodId: string) => {
+    setSelectedFood((prev) =>
+      prev.map((item) =>
+        item.id === foodId ? { ...item, foodCount: item.foodCount + 1 } : item
+      )
+    );
+  };
+
+  const Ondecrement = (foodId: string) => {
+    setSelectedFood((prev) =>
+      prev.map((item) =>
+        item.id === foodId && item.foodCount > 1
+          ? { ...item, foodCount: item.foodCount - 1 }
+          : item
+      )
+    );
   };
 
   return (
@@ -50,7 +77,7 @@ const MenuPage = () => {
           ].map((category) => (
             <button
               className={`button ${
-                activeCatergory === category ? "active-button" : ""
+                activeCategory === category ? "active-button" : ""
               }`}
               onClick={() => setActiveCategory(category)}
               aria-label="Active Menu Button"
@@ -62,12 +89,14 @@ const MenuPage = () => {
       </section>
 
       <aside className="menu-aside">
-        {filteredFoods.map((foodLists, index) => {
+        {filteredFoods.map((foodLists) => {
           const isSelected = selectedFood.some((f) => f.id === foodLists.id);
           return (
             <Food
+              onDecrement={Ondecrement}
+              onIncrement={Onincrement}
               isSelected={isSelected}
-              key={index}
+              key={foodLists.id}
               foodId={foodLists.id}
               food={foodLists}
               onToggle={() => toggleFoodSelection(foodLists)}
