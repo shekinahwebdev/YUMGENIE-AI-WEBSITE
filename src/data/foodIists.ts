@@ -5,6 +5,7 @@ export const foodLists = [
     title: "Coffee Cream",
     category: "Desserts",
     price: 10.29,
+    foodCount: 0,
   },
   {
     id: "2",
@@ -12,6 +13,7 @@ export const foodLists = [
     title: "Waffle with Chocolate",
     category: "Desserts",
     price: 30.59,
+    foodCount: 0,
   },
   {
     id: "3",
@@ -19,6 +21,7 @@ export const foodLists = [
     title: "Waffle with Chocolate and StrawBerry",
     category: "Desserts",
     price: 20.29,
+    foodCount: 0,
   },
   {
     id: "4",
@@ -26,6 +29,7 @@ export const foodLists = [
     title: "Cone Ice Cream",
     category: "Desserts",
     price: 20.89,
+    foodCount: 0,
   },
   {
     id: "5",
@@ -33,6 +37,7 @@ export const foodLists = [
     title: "Mixed Ice Cream Flavors",
     category: "Desserts",
     price: 10.99,
+    foodCount: 0,
   },
   {
     id: "6",
@@ -40,6 +45,7 @@ export const foodLists = [
     title: "Chocolate Ice Cream",
     category: "Desserts",
     price: 40.39,
+    foodCount: 0,
   },
   {
     id: "7",
@@ -47,6 +53,7 @@ export const foodLists = [
     title: "Fruit Salad",
     category: "Desserts",
     price: 20.19,
+    foodCount: 0,
   },
   {
     id: "8",
@@ -54,6 +61,7 @@ export const foodLists = [
     title: "Coffee Cream",
     category: "Desserts",
     price: 13.99,
+    foodCount: 0,
   },
   // Drinks
   {
@@ -62,6 +70,7 @@ export const foodLists = [
     title: "Sprite",
     category: "Drinks",
     price: 5.29,
+    foodCount: 0,
   },
   {
     id: "10",
@@ -69,6 +78,7 @@ export const foodLists = [
     title: "Fanta",
     category: "Drinks",
     price: 5.29,
+    foodCount: 0,
   },
   {
     id: "11",
@@ -76,6 +86,7 @@ export const foodLists = [
     title: "Coca-Cola",
     category: "Drinks",
     price: 5.29,
+    foodCount: 0,
   },
   {
     id: "12",
@@ -83,6 +94,7 @@ export const foodLists = [
     title: "Mango Juice",
     category: "Drinks",
     price: 5.29,
+    foodCount: 0,
   },
   {
     id: "13",
@@ -90,6 +102,7 @@ export const foodLists = [
     title: "Iced Fruit Juice",
     category: "Drinks",
     price: 5.29,
+    foodCount: 0,
   },
   {
     id: "14",
@@ -97,6 +110,7 @@ export const foodLists = [
     title: "Cappuccino",
     category: "Drinks",
     price: 5.29,
+    foodCount: 0,
   },
   // Fast-Food
   {
@@ -105,6 +119,7 @@ export const foodLists = [
     title: "Cheese Burger",
     category: "Fast-Food",
     price: 30.09,
+    foodCount: 0,
   },
   {
     id: "16",
@@ -112,6 +127,7 @@ export const foodLists = [
     title: "Toast Sandwich",
     category: "Fast-Food",
     price: 40.13,
+    foodCount: 0,
   },
   {
     id: "17",
@@ -119,6 +135,7 @@ export const foodLists = [
     title: "Burrito",
     category: "Fast-Food",
     price: 20.59,
+    foodCount: 0,
   },
   {
     id: "18",
@@ -126,6 +143,7 @@ export const foodLists = [
     title: "Hot Dog",
     category: "Fast-Food",
     price: 15.99,
+    foodCount: 0,
   },
   {
     id: "19",
@@ -133,6 +151,7 @@ export const foodLists = [
     title: "Chicken Wrap",
     category: "Fast-Food",
     price: 25.49,
+    foodCount: 0,
   },
   {
     id: "20",
@@ -140,6 +159,7 @@ export const foodLists = [
     title: "Quesadillas",
     category: "Fast-Food",
     price: 22.99,
+    foodCount: 0,
   },
   {
     id: "21",
@@ -147,6 +167,7 @@ export const foodLists = [
     title: "Chicken Burger",
     category: "Fast-Food",
     price: 25.99,
+    foodCount: 0,
   },
   {
     id: "22",
@@ -154,6 +175,7 @@ export const foodLists = [
     title: "Cheddar Pizza",
     category: "Fast-Food",
     price: 22.99,
+    foodCount: 0,
   },
   {
     id: "23",
@@ -161,6 +183,7 @@ export const foodLists = [
     title: "French Fries",
     category: "Fast-Food",
     price: 5.99,
+    foodCount: 0,
   },
   // Main-Dish
   {
@@ -169,6 +192,7 @@ export const foodLists = [
     title: "Chicken Wings",
     category: "Main-Dish",
     price: 15.99,
+    foodCount: 0,
   },
   {
     id: "25",
@@ -176,6 +200,7 @@ export const foodLists = [
     title: "Bolognese Sauce",
     category: "Main-Dish",
     price: 12.99,
+    foodCount: 0,
   },
   {
     id: "26",
@@ -183,6 +208,7 @@ export const foodLists = [
     title: "Fried Rice",
     category: "Main-Dish",
     price: 20.99,
+    foodCount: 0,
   },
   {
     id: "27",
@@ -190,6 +216,7 @@ export const foodLists = [
     title: "Nigerian Jollof Rice",
     category: "Main-Dish",
     price: 15.99,
+    foodCount: 0,
   },
   {
     id: "28",
@@ -197,6 +224,7 @@ export const foodLists = [
     title: "Hearty Spaghetti Bolognese",
     category: "Main-Dish",
     price: 12.99,
+    foodCount: 0,
   },
   {
     id: "29",
@@ -204,6 +232,7 @@ export const foodLists = [
     title: "Barbecue Chicken",
     category: "Main-Dish",
     price: 18.99,
+    foodCount: 0,
   },
   {
     id: "30",
@@ -211,6 +240,7 @@ export const foodLists = [
     title: "Nasi Goreng",
     category: "Main-Dish",
     price: 12.99,
+    foodCount: 0,
   },
   {
     id: "31",
@@ -218,6 +248,7 @@ export const foodLists = [
     title: "Ghana Jollof Rice",
     category: "Main-Dish",
     price: 15.99,
+    foodCount: 0,
   },
   {
     id: "32",
@@ -225,6 +256,7 @@ export const foodLists = [
     title: "Peruvian Grilled Chicken",
     category: "Main-Dish",
     price: 18.99,
+    foodCount: 0,
   },
   {
     id: "33",
@@ -232,6 +264,7 @@ export const foodLists = [
     title: "Tangy Wings",
     category: "Main-Dish",
     price: 12.99,
+    foodCount: 0,
   },
   // Snacks
   {
@@ -240,6 +273,7 @@ export const foodLists = [
     title: "Spring Rolls",
     category: "Snacks",
     price: 2.99,
+    foodCount: 0,
   },
   {
     id: "35",
@@ -247,6 +281,7 @@ export const foodLists = [
     title: "Cupcakes",
     category: "Snacks",
     price: 3.99,
+    foodCount: 0,
   },
   {
     id: "36",
@@ -254,6 +289,7 @@ export const foodLists = [
     title: "Oreo Cream Donuts",
     category: "Snacks",
     price: 3.99,
+    foodCount: 0,
   },
   {
     id: "37",
@@ -261,6 +297,7 @@ export const foodLists = [
     title: "Popia",
     category: "Snacks",
     price: 2.99,
+    foodCount: 0,
   },
   {
     id: "38",
@@ -268,6 +305,7 @@ export const foodLists = [
     title: "Cupcake Delights",
     category: "Snacks",
     price: 3.99,
+    foodCount: 0,
   },
   {
     id: "39",
@@ -275,6 +313,7 @@ export const foodLists = [
     title: "Cream Donuts",
     category: "Snacks",
     price: 4.99,
+    foodCount: 0,
   },
   {
     id: "40",
@@ -282,5 +321,6 @@ export const foodLists = [
     title: "Glazed Donuts",
     category: "Snacks",
     price: 5.99,
+    foodCount: 0,
   },
 ];
