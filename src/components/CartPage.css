@@ -145,7 +145,6 @@
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  /* border: 2px solid green; */
 }
 
 .food-name {
@@ -164,6 +163,7 @@
   background-color: #0d0d0d;
   color: white;
   padding: 0.2rem 1rem;
+  max-width: 100px;
   border-radius: 10px;
 }
 
