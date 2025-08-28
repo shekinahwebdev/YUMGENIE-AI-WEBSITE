@@ -3,6 +3,14 @@ import Food from "../components/Food";
 import "../components/MenuPage.css";
 import menuIcon from "/assets/icons/fast-food.png";
 import { foodLists } from "../data/foodIists";
+import type { FoodType } from "../RootLayout";
+import { useOutletContext } from "react-router-dom";
+
+type ContextType = {
+  selectedFood: FoodType[];
+  setSelectedFood: React.Dispatch<React.SetStateAction<FoodType[]>>;
+};
+
 const MenuPage = () => {
   const [activeCatergory, setActiveCategory] = useState("All");
 
@@ -11,21 +19,11 @@ const MenuPage = () => {
       ? foodLists
       : foodLists.filter((food) => food.category === activeCatergory);
 
-  interface FoodType {
-    id: string;
-    src: string;
-    category: string;
-    title: string;
-    price: number;
-  }
-  [];
-
-  const [selectedFood, setSelectedFood] = useState<FoodType[]>([]);
+  const { selectedFood, setSelectedFood } = useOutletContext<ContextType>();
 
   const toggleFoodSelection = (food: FoodType) => {
     setSelectedFood((prev) => {
       const existedFood = selectedFood.some((item) => item.id === food.id);
-
       if (existedFood) {
         return prev.filter((item) => item.id !== food.id);
       } else {

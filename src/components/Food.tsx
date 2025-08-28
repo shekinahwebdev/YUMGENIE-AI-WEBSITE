@@ -7,6 +7,7 @@ type FoodType = {
   category: string;
   title: string;
   price: number;
+  foodCount: number;
 };
 
 interface FoodProps {
@@ -17,7 +18,7 @@ interface FoodProps {
 }
 
 const Food: React.FC<FoodProps> = ({ food, onToggle, isSelected, foodId }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const handleIncrement = () => {
     setCount((prev) => {
@@ -44,7 +45,6 @@ const Food: React.FC<FoodProps> = ({ food, onToggle, isSelected, foodId }) => {
 
   return (
     <section className="food-section">
-      {/* {food.map((list, index) => ( */}
       <div className="foodName" key={foodId}>
         <img
           src={food.src}
@@ -52,7 +52,7 @@ const Food: React.FC<FoodProps> = ({ food, onToggle, isSelected, foodId }) => {
           className={`foodImage ${isSelected ? "selected" : ""}`}
         />
         <div className="food-item-add">
-          {!isSelected && count === 0 ? (
+          {!isSelected && count === 1 ? (
             <button className="add-section btn" onClick={onToggle}>
               <img
                 src={addToCart}
