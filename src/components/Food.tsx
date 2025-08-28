@@ -1,6 +1,5 @@
 import addToCart from "/assets/icons/icon-add-cart.svg";
 import "./Food.css";
-import { useState } from "react";
 
 type FoodType = {
   src: string;
@@ -14,33 +13,29 @@ interface FoodProps {
   food: FoodType;
   isSelected?: boolean;
   onToggle: () => void;
+  onIncrement: (foodId: string) => void;
+  onDecrement: (foodId: string) => void;
   foodId: string;
 }
 
-const Food: React.FC<FoodProps> = ({ food, onToggle, isSelected, foodId }) => {
-  const [count, setCount] = useState(1);
-
+const Food: React.FC<FoodProps> = ({
+  food,
+  onToggle,
+  isSelected,
+  foodId,
+  onDecrement,
+  onIncrement,
+}) => {
   const handleIncrement = () => {
-    setCount((prev) => {
-      const newCount = prev + 1;
-      if (newCount === 0) {
-        onToggle();
-      }
-      return newCount;
-    });
+    onIncrement(foodId);
   };
 
   const handleDecrement = () => {
-    setCount((prev) => {
-      if (prev > 1) {
-        return prev - 1;
-      }
-      if (prev === 0) {
-        onToggle();
-        return 0;
-      }
-      return 0;
-    });
+    if (food.foodCount > 1) {
+      onDecrement(foodId);
+    } else {
+      onToggle();
+    }
   };
 
   return (
@@ -52,7 +47,7 @@ const Food: React.FC<FoodProps> = ({ food, onToggle, isSelected, foodId }) => {
           className={`foodImage ${isSelected ? "selected" : ""}`}
         />
         <div className="food-item-add">
-          {!isSelected && count === 1 ? (
+          {!isSelected ? (
             <button className="add-section btn" onClick={onToggle}>
               <img
                 src={addToCart}
@@ -77,7 +72,7 @@ const Food: React.FC<FoodProps> = ({ food, onToggle, isSelected, foodId }) => {
                   <path fill="currentColor" d="M0 .375h10v1.25H0V.375Z" />
                 </svg>
               </button>
-              <p>{count}</p>
+              <p>{food.foodCount}</p>
               <button
                 className="food-item__button increment"
                 onClick={handleIncrement}

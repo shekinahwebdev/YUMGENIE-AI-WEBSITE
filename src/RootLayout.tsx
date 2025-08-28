@@ -15,15 +15,35 @@ export interface FoodType {
 
 const RootLayout = () => {
   const [selectedFood, setSelectedFood] = useState<FoodType[]>([]);
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  console.log(selectedFood);
 
   const handleRemoveFood = (idToRemove: string) => {
-    setSelectedFood(selectedFood.filter((food) => food.id !== idToRemove));
+    setSelectedFood((prev) =>
+      prev
+        .map((item) =>
+          item.id === idToRemove
+            ? { ...item, foodCount: item.foodCount - 1 }
+            : item
+        )
+        .filter((item) => item.foodCount > 0)
+    );
   };
+
   return (
     <>
       <Header />
       <main className="yumgenie-ai-website">
-        <Outlet context={{ selectedFood, setSelectedFood, handleRemoveFood }} />
+        <Outlet
+          context={{
+            selectedFood,
+            setSelectedFood,
+            handleRemoveFood,
+            activeCategory,
+            setActiveCategory,
+          }}
+        />
       </main>
       <ChatbotPage />
       <Footer />
