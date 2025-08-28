@@ -9,6 +9,7 @@ export interface FoodType {
   category: string;
   title: string;
   price: number;
+  foodCount: number;
 }
 [];
 
