@@ -17,8 +17,6 @@ const RootLayout = () => {
   const [selectedFood, setSelectedFood] = useState<FoodType[]>([]);
   const [activeCategory, setActiveCategory] = useState("All");
 
-  console.log(selectedFood);
-
   const handleRemoveFood = (idToRemove: string) => {
     setSelectedFood((prev) =>
       prev

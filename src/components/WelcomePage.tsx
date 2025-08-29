@@ -41,7 +41,7 @@ const WelcomePage = () => {
         </p>
       </div>
 
-      <button className="welcome-button" onClick={() => navigate("/order")}>
+      <button className="welcome-button" onClick={() => navigate("/menu")}>
         Order Now
       </button>
     </section>

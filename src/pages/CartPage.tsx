@@ -14,6 +14,7 @@ type ContextType = {
 const CartPage = () => {
   const { selectedFood, setSelectedFood, handleRemoveFood } =
     useOutletContext<ContextType>();
+  console.log(selectedFood);
 
   return (
     <main className="cart-page">

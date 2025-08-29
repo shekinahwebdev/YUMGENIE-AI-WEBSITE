@@ -47,6 +47,7 @@ const OrderPage = () => {
           </label>
 
           <div className="total-food">
+            <h2>Food Number: 1x</h2>
             <h2>Total: $0.0</h2>
           </div>
         </section>
