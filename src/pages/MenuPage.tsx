@@ -51,11 +51,13 @@ const MenuPage = () => {
 
   const Ondecrement = (foodId: string) => {
     setSelectedFood((prev) =>
-      prev.map((item) =>
-        item.id === foodId && item.foodCount > 1
-          ? { ...item, foodCount: item.foodCount - 1 }
-          : item
-      )
+      prev
+        .map((item) =>
+          item.id === foodId && item.foodCount > 1
+            ? { ...item, foodCount: item.foodCount - 1 }
+            : item
+        )
+        .filter((item) => !(item.id === foodId && item.foodCount === 1))
     );
   };
 
