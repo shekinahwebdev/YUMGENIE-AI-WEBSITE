@@ -13,6 +13,14 @@ export interface FoodType {
 }
 [];
 
+export type ContextType = {
+  selectedFood: FoodType[];
+  setSelectedFood: React.Dispatch<React.SetStateAction<FoodType[]>>;
+  handleRemoveFood: (id: string) => void;
+  activeCategory: string;
+  setActiveCategory: React.Dispatch<React.SetStateAction<string>>;
+};
+
 const RootLayout = () => {
   const [selectedFood, setSelectedFood] = useState<FoodType[]>([]);
   const [activeCategory, setActiveCategory] = useState("All");
@@ -31,7 +39,7 @@ const RootLayout = () => {
 
   return (
     <>
-      <Header />
+      <Header selectedFood={selectedFood} />
       <main className="yumgenie-ai-website">
         <Outlet
           context={{
