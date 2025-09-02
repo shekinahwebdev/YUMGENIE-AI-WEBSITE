@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
+import type { FoodType } from "../RootLayout";
 
-const NavLinks = () => {
+interface NavLinksProps {
+  selectedFood: FoodType[];
+}
+
+const NavLinks: React.FC<NavLinksProps> = ({ selectedFood }) => {
+  const cartCount = selectedFood.reduce((sum, food) => sum + food.foodCount, 0);
+
   return (
     <nav className="main-nav">
       <ul className="nav-menu">
@@ -19,9 +26,10 @@ const NavLinks = () => {
             <span>Menu</span>
           </Link>
         </li>
-        <li>
+        <li className="cart-link">
           <Link to="/cart" data-text="Cart">
             <span>Cart</span>
+            {cartCount > 0 && <span className="cart-badge">{cartCount}</span>}
           </Link>
         </li>
         <li>
