@@ -31,11 +31,7 @@ const Food: React.FC<FoodProps> = ({
   };
 
   const handleDecrement = () => {
-    if (food.foodCount > 1) {
-      onDecrement(foodId);
-    } else {
-      onToggle();
-    }
+    onDecrement(foodId);
   };
 
   return (
@@ -99,7 +95,6 @@ const Food: React.FC<FoodProps> = ({
           <span className="fodd-item__price">${food.price}</span>
         </div>
       </div>
-      {/* ))} */}
     </section>
   );
 };
