@@ -6,6 +6,7 @@ import "../components/ChatbotPage.css";
 import { useEffect, useRef, useState } from "react";
 import { companyInfo } from "../data/companyInfo";
 import { useChatbot } from "../contexts/ChatbotContext";
+import type { FoodType } from "../RootLayout";
 
 interface ChatMessage {
   hideInfoChat: boolean;
@@ -13,8 +14,15 @@ interface ChatMessage {
   content: string;
   isError?: boolean;
 }
+interface ChatbotPage {
+  selectedFood: FoodType[];
+  setSelectedFood: React.Dispatch<React.SetStateAction<FoodType[]>>;
+}
 
-const ChatbotPage = () => {
+const ChatbotPage: React.FC<ChatbotPage> = ({
+  selectedFood,
+  setSelectedFood,
+}) => {
   const [chathistory, setChatHistory] = useState<ChatMessage[]>([
     {
       hideInfoChat: true,
@@ -27,7 +35,7 @@ const ChatbotPage = () => {
   const { isOpen, toggleChatbot } = useChatbot();
 
   const generateBotResponse = async (history: any[]) => {
-    const upadateChatHistory = (botReply: string, isError: boolean = false) => {
+    const updateChatHistory = (botReply: string, isError: boolean = false) => {
       setChatHistory((prevHistory) => [
         ...prevHistory.filter(
           (msg) => !(msg.role === "bot" && msg.content === "Thinking...")
@@ -57,6 +65,13 @@ const ChatbotPage = () => {
       );
       const data = await response.json();
       if (!response.ok) {
+        if (response.status === 429) {
+          updateChatHistory(
+            "⚠️ Oops, I'm receiving too many requests right now. Please wait a moment and try again.",
+            true
+          );
+          return;
+        }
         throw new Error(data.error || "Failed to fetch response");
       }
       console.log(data);
@@ -65,9 +80,13 @@ const ChatbotPage = () => {
         ?.replace(/\*/g, "")
         .trim();
 
-      upadateChatHistory(botReply);
+      updateChatHistory(botReply);
     } catch (error: string | any) {
       console.log(error.message, true);
+      updateChatHistory(
+        "⚠️ Something went wrong while contacting the server. Please try again later.",
+        true
+      );
     }
   };
 
@@ -118,6 +137,8 @@ const ChatbotPage = () => {
               setChatHistory={setChatHistory}
               generateBotResponse={generateBotResponse}
               chathistory={chathistory}
+              selectedFood={selectedFood}
+              setSelectedFood={setSelectedFood}
             />
           </footer>
         </div>

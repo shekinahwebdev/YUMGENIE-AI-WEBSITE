@@ -51,7 +51,10 @@ const RootLayout = () => {
           }}
         />
       </main>
-      <ChatbotPage />
+      <ChatbotPage
+        selectedFood={selectedFood}
+        setSelectedFood={setSelectedFood}
+      />
       <Footer />
     </>
   );
