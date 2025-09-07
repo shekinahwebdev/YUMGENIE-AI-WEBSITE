@@ -1,6 +1,13 @@
-YUMGENIE-AI-WEBSITE
+                                                      YUMGENIE-AI-WEBSITE
+
+
 Transforming Food Delivery with Intelligent Innovation
+
+
+
 🛠️ Built With
+
+
 	•	JSON
 	•	Markdown
 	•	npm
@@ -11,6 +18,8 @@ Transforming Food Delivery with Intelligent Innovation
 	•	ESLint
  
  📖 Table of Contents
+
+ 
 	•	Overview
 	•	Why YUMGENIE-AI-WEBSITE?
 	•	Getting Started
@@ -22,6 +31,8 @@ Transforming Food Delivery with Intelligent Innovation
  🌐 Overview
 
 YUMGENIE-AI-WEBSITE is a modern React + TypeScript project built with Vite, designed to deliver fast, scalable, and maintainable web applications.
+
+
 
 It emphasizes developer experience through:
 	•	⚡ Hot Module Replacement (HMR)
@@ -36,6 +47,7 @@ The architecture includes reusable components, centralized state management, and
 This project was created to simplify the development of sophisticated web interfaces with a focus on quality and efficiency.
 
 Core Features:
+
 	•	🧩 Modular Architecture: Reusable components & organized routing for scalability
 	•	🚀 Fast Development: Optimized build process with Vite for rapid iteration
 	•	🔒 Type Safety: Strong TypeScript configs ensuring robust, error-free code
@@ -49,6 +61,7 @@ Follow these instructions to set up YUMGENIE-AI-WEBSITE locally.
 📋 Prerequisites
 
 Make sure you have:
+
 	•	TypeScript
 	•	npm (or another package manager like yarn)
 
